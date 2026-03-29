@@ -1,7 +1,5 @@
 package com.ControleFinanceiro.Desafio.model;
 
-import java.time.LocalDate;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -9,19 +7,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "transacoes")
+@Table(name = "categorias")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class Transacao {
+public class Categoria {
 
     private Long id;
-    private String descricao;
-    private Double valor;
+    private String nome;
     private String tipo; // "receita" ou "despesa"
-    private LocalDate data;
-    private Categoria categoria;
-    
 
 }
