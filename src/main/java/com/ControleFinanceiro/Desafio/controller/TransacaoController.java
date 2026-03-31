@@ -26,9 +26,9 @@ public class TransacaoController {
     }
 
     @PostMapping
-    public ResponseEntity<Transacao> createTransacao() {
-        transacaoService.createTransacao(new Transacao());
-        return ResponseEntity.ok().build();
+    public ResponseEntity<Transacao> createTransacao(@RequestBody Transacao transacao) {
+        Transacao novaTransacao = transacaoService.createTransacao(transacao);
+        return ResponseEntity.ok(novaTransacao);
     }
 
     @GetMapping

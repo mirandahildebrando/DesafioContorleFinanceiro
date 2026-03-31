@@ -22,7 +22,5 @@ public class Categoria {
     private Long id;
     private String nome;
     private String tipo; // "receita" ou "despesa"
-    @ManyToOne
-    private Transacao transacao;
 
 }
