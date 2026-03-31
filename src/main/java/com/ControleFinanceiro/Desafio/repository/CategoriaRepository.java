@@ -8,4 +8,6 @@ import com.ControleFinanceiro.Desafio.model.Categoria;
 @Repository
 public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
 
+    Categoria findByNome(String nome);
+
 }
