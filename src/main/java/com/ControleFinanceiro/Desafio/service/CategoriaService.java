@@ -20,13 +20,9 @@ public class CategoriaService {
         this.transacaoService = transacaoService;
     }
 
-    public Categoria createCategoria(Categoria categoria, Transacao transacao) {
-        if(categoriaRepository.findByNome(categoria.getNome()).equals("Receita")){
-            categoria.setTipo("receita");
-            transacao.setTipo("receita");
-        } else {
+    public Categoria createCategoria(Categoria categoria) {
+        if(categoria.getTipo() == null) {
             categoria.setTipo("despesa");
-            transacao.setTipo("despesa");
         }
         return categoriaRepository.save(categoria);
     }
