@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.ControleFinanceiro.Desafio.dtos.TransacaoRequestDTO;
+import com.ControleFinanceiro.Desafio.dtos.TransacaoResponseDTO;
 import com.ControleFinanceiro.Desafio.model.Transacao;
 import com.ControleFinanceiro.Desafio.repository.TransacaoRepository;
 
@@ -16,7 +18,17 @@ public class TransacaoService {
         this.transacaoRepository = transacaoRepository;
     }
 
-    public Transacao createTransacao(Transacao transacao) {
+    public Transacao createTransacao(TransacaoRequestDTO dto) {
+
+        Transacao transacao = new Transacao();
+
+        transacao.setId(dto.id());
+        transacao.setDescricao(dto.descricao());
+        transacao.setValor(dto.valor());
+        transacao.setTipo(dto.tipo());
+        transacao.setData(dto.data());
+        transacao.setCategoria(dto.categoria());
+        
         return transacaoRepository.save(transacao);
     }
 
