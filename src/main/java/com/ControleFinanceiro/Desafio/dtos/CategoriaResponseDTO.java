@@ -1,5 +1,8 @@
 package com.ControleFinanceiro.Desafio.dtos;
 
-public record CategoriaResponseDTO() {
+public record CategoriaResponseDTO(
+    String nome,
+    String tipo
+) {
 
 }
