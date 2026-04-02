@@ -1,5 +1,9 @@
 package com.ControleFinanceiro.Desafio.dtos;
 
-public record CategoriaRequestDTO() {
+public record CategoriaRequestDTO(
+    Long id,
+    String nome,
+    String tipo
+) {
 
 }
